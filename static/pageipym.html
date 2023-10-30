@@ -1,0 +1,16 @@
+<div class="idea">
+    <div>掩码计算</div>
+    <div>
+        <div>
+            <form>
+                <input type="text" id="ip" name="ip" placeholder="输入正确IP地址" value="192.168.1.1"
+                    onfocus="if(this.value=='192.168.1.1')this.value='';" oninput="calculate()"
+                    style="display: block; width: 100%;">
+                <input type="range" id="subnet" name="subnet" min="0" max="15" step="1" value="8"
+                    oninput="updateValue(this.value)" style="display: block; width: 100%;">
+                <strong><span id="subnetValue" style="display: block;"></span></strong>
+            </form>
+        </div>
+        <div id="result"></div>
+    </div>
+</div>

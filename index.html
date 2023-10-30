@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="IP工具" />
+    <meta property="og:description" content="本机IP查询/IP掩码计算/网络速率换算/MAC厂商查询" />
+    <meta property="og:image" content="//res.sog.cc/webapp/ip/favicon.ico" />
+    <meta property="og:url" content="//res.sog.cc/webapp/ip" />
+    <link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./static/some.css">
+    <script src="https://res.sog.cc/jquery/jquery-3.5.1.min.js"></script>
+    <script src="./static/main.js"></script>
+    <title>IP工具</title>
+</head>
+
+<body>
+    <div class="idea">
+        <div class="nft">
+            <li id="ipgs"> <a href="#">归属</a></li>
+            <li id="ipym"><a href="#">掩码</a></li>
+            <li id="maccj"> <a href="#">网卡</a></li>
+            <li id="slhs"> <a href="#">速率</a></li>
+        </div>
+    </div>
+    <div id="content"></div>
+    <footer class="nav111">
+        &copy;
+        <span id="year"></span>
+        <a href="/">Sog 🍖肉食爱好者</a>
+        <script type="text/javascript">
+            var yearElement = document.getElementById("year"); // 获取年份元素
+            var yearText = document.createTextNode(new Date().getFullYear()); // 创建文本节点，包含当前年份
+            yearElement.appendChild(yearText); // 将文本节点插入到年份元素中
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#ipgs').click(function () {
+                    loadPage('./static/pageipgs.html', ['./static/pageipgs.js']);
+                });
+                $('#ipym').click(function () {
+                    loadPage('./static/pageipym.html', ['./static/pageipym.js']);
+                });
+                $('#maccj').click(function () {
+                    loadPage('./static/pagemaccj.html', ['./static/pagemaccj.js', './static/pagemaccj1.js']);
+                });
+                $('#slhs').click(function () {
+                    loadPage('./static/pageslhs.html', ['./static/pageslhs.js']);
+                });
+            });
+        </script>
+    </footer>
+
+</body>
+
+</html>

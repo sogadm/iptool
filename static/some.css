@@ -1,0 +1,133 @@
+body {
+  overflow: hidden;
+  /* overflow-x: hidden; /* 禁止拖动 */
+  touch-action: none; /* 禁止触摸事件 */
+  -webkit-text-size-adjust: 100%; /* 禁用 iOS 的自动缩放 */
+  padding-bottom: constant(safe-area-inset-bottom); /* 兼容 iOS 11.2+ */
+  padding-bottom: env(safe-area-inset-bottom); /* 兼容 iOS 11.2+ */
+  margin: 0;
+  padding: 0;
+  background-color: #f8f5d7;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+}
+/* 可见元素 */
+.idea {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 90%;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+div {
+  margin-top: 1em; /* 每个div空一行 */
+}
+
+/* 表格 */
+.idea th,
+.idea td {
+  border: 3px solid #960000;
+  padding: 3px;
+  text-align: center;
+}
+.idea table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* 输入和按钮 */
+.idea input,
+.idea button {
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 0; /* 使边缘直角 */
+  outline: none; /* 移除默认的轮廓 */
+  background: transparent; /* 默认背景为透明 */
+}
+/* 有焦点时的闪烁效果 */
+.idea input:focus {
+  animation: blinker 1s linear infinite; /* 闪烁动画 */
+  color: black; /* 文字颜色为黑色 */
+}
+/* 闪烁动画 */
+@keyframes blinker {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #ffc0cb;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* 链接 */
+.idea {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 导航 */
+.nft {
+  margin: 10% 0 0 0; /* 上下左右留边 */
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nft li {
+  width: 100px;
+  border: 5px solid #960000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  margin: -2.5px;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+.nft li {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 30px;
+  color: #000000;
+}
+
+/* 滑块 */
+form input[type="range"] {
+  appearance: none;
+  height: 30px;
+  background: #960000ee;
+  margin: 0;
+}
+form input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 50px; /* 调整这个值来改变滑块的大小 */
+  height: 30px; /* 调整这个值来改变滑块的大小 */
+  background: #e8e5c7;
+  cursor: pointer;
+}
+
+/* 页面底部 */
+.nav111 {
+  position: fixed;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  color: inherit;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 11px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
