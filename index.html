@@ -18,17 +18,17 @@
 <body>
     <div class="idea">
         <div class="nft">
-            <li id="ipgs"> <a href="#">归属</a></li>
-            <li id="ipym"><a href="#">掩码</a></li>
-            <li id="maccj"> <a href="#">网卡</a></li>
-            <li id="slhs"> <a href="#">速率</a></li>
+            <li id="ipgs"> <a href="#/ipgs">归属</a></li>
+            <li id="ipym"><a href="#/ipym">掩码</a></li>
+            <li id="maccj"> <a href="#/maccj">网卡</a></li>
+            <li id="slhs"> <a href="#/slhs">速率</a></li>
         </div>
     </div>
     <div id="content"></div>
     <footer class="nav111">
         &copy;
         <span id="year"></span>
-        <a href="/">Sog 🍖肉食爱好者</a>
+        <a href="./">Sog 🍖肉食爱好者</a>
         <script type="text/javascript">
             var yearElement = document.getElementById("year"); // 获取年份元素
             var yearText = document.createTextNode(new Date().getFullYear()); // 创建文本节点，包含当前年份
@@ -36,18 +36,31 @@
         </script>
         <script>
             $(document).ready(function () {
-                $('#ipgs').click(function () {
-                    loadPage('./static/pageipgs.html', ['./static/pageipgs.js']);
-                });
-                $('#ipym').click(function () {
-                    loadPage('./static/pageipym.html', ['./static/pageipym.js']);
-                });
-                $('#maccj').click(function () {
-                    loadPage('./static/pagemaccj.html', ['./static/pagemaccj.js', './static/pagemaccj1.js']);
-                });
-                $('#slhs').click(function () {
-                    loadPage('./static/pageslhs.html', ['./static/pageslhs.js']);
-                });
+                function loadPage(pageUrl, scriptUrls) {
+                    $("#content").load(pageUrl, function () {
+                        for (var i = 0; i < scriptUrls.length; i++) {
+                            var script = document.createElement("script");
+                            script.src = scriptUrls[i];
+                            document.body.appendChild(script);
+                        }
+                    });
+                }
+
+                function handleHashChange() {
+                    var hash = window.location.hash;
+                    if (hash === "#/ipgs") {
+                        loadPage('./static/pageipgs.html', ['./static/pageipgs.js']);
+                    } else if (hash === "#/ipym") {
+                        loadPage('./static/pageipym.html', ['./static/pageipym.js']);
+                    } else if (hash === "#/maccj") {
+                        loadPage('./static/pagemaccj.html', ['./static/pagemaccj.js', './static/pagemaccj1.js']);
+                    } else if (hash === "#/slhs") {
+                        loadPage('./static/pageslhs.html', ['./static/pageslhs.js']);
+                    }
+                }
+
+                window.addEventListener("hashchange", handleHashChange);
+                handleHashChange();
             });
         </script>
     </footer>

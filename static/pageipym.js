@@ -153,5 +153,5 @@ window.onload = function() {
   document.getElementById("ip").dispatchEvent(new Event("input"));
 
   // 在页面加载时调用函数以更新显示的子网值
-  updateValue(document.getElementById("subnet").value);
+  // updateValue(document.getElementById("subnet").value);
 };

@@ -8,9 +8,34 @@
                     style="display: block; width: 100%;">
                 <input type="range" id="subnet" name="subnet" min="0" max="15" step="1" value="8"
                     oninput="updateValue(this.value)" style="display: block; width: 100%;">
-                <strong><span id="subnetValue" style="display: block;"></span></strong>
+                    <strong><span id="subnetValue" style="display: block;">255.255.255.0/24</span></strong>
             </form>
         </div>
-        <div id="result"></div>
+        <div id="result">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>第一</td>
+                        <td>192.168.1.1</td>
+                    </tr>
+                    <tr>
+                        <td>最后</td>
+                        <td>192.168.1.254</td>
+                    </tr>
+                    <tr>
+                        <td>可用</td>
+                        <td>254</td>
+                    </tr>
+                    <tr>
+                        <td>网络</td>
+                        <td>192.168.1.0</td>
+                    </tr>
+                    <tr>
+                        <td>广播</td>
+                        <td>192.168.1.255</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
